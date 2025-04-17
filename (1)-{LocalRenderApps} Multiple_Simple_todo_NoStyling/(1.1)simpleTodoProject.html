@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Task App</title>
+</head>
+
+
+
+
+<body>
+  <h2>Task Manager</h2>
+
+  <input type="text" id="task-input" />
+  <button onclick="addTask()">Add Task</button>
+  <button onclick="removeLastTask()">Remove Last</button>
+  <button onclick="removeFirstTask()">Remove First</button>
+
+  <div id="task-list"></div>
+
+
+
+
+
+
+  <script>
+
+    
+
+    let tasks = [];
+
+
+
+
+
+
+    
+    function addTask() {
+      const input = document.getElementById("task-input");
+      const name = input.value.trim();
+      if (!name) return;
+
+      tasks.push({ name });
+      input.value = "";
+      updateView();
+    }
+
+
+
+
+
+    function removeLastTask() {
+      tasks.pop();
+      updateView();
+    }
+
+
+
+
+    function removeFirstTask() {
+      tasks.shift();
+      updateView();
+    }
+
+
+
+
+
+
+
+
+    function buildTaskElement(task, index) {
+      const div = document.createElement("div");
+      const heading = document.createElement("h1");
+      const removeBtn = document.createElement("button");
+
+      heading.innerText = task.name;
+      removeBtn.innerText = "Remove";
+      removeBtn.onclick = () => {
+        tasks.splice(index, 1);
+        updateView();
+      };
+
+      div.appendChild(heading);
+      div.appendChild(removeBtn);
+      return div;
+    }
+
+
+
+
+
+
+    function updateView() {
+      const container = document.getElementById("task-list");
+      container.innerHTML = "";
+
+      for (let i = 0; i < tasks.length; i++) {
+        const item = buildTaskElement(tasks[i], i);
+        container.appendChild(item);
+      }
+    }
+
+
+
+
+  </script>
+
+
+
+
+
+
+</body>
+</html>
