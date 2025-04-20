@@ -1,0 +1,135 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+
+
+
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+
+
+  
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+
+
+
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+
+
+
+
+
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+
+
+
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+
+
+
+  
+  #habit-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+
+
+
+
+  .habit {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+
+
+
+
+  .habit-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+
+
+
+
+
+  .habit-days {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  
+
+
+
+
+  .day {
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+  }
+  
+
+
+  
+  .day.active {
+    background-color: #28a745;
+    color: white;
+  }
